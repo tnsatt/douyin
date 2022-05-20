@@ -10,7 +10,7 @@ def format(url):
     return url.replace("/playwm/", "/play/")
 def get_link(url):
     id=parse_id(url)
-    key=""#self::get_key($id);
+    key="" #get_key($id);
     api = "https://www.iesdouyin.com/web/api/v2/aweme/iteminfo/?item_ids="+id+"&dytk="+key
     res=get(api)
     try:
@@ -26,7 +26,7 @@ def get_key(url):
         return find[0][0]
     return None
 
-def get_video(id, simple=False):
+def get_data(id, simple=False):
     id=parse_id(id)
     if not id: raise Exception("No Video ID")
     url='https://www.iesdouyin.com/web/api/v2/aweme/iteminfo/?item_ids='+id
@@ -51,12 +51,12 @@ def parse_id(url):
     match = re.search("(\/share)?\/video\/([^\/\?]+)", url)
     if match:
         return match.group(2)
-    last=requests.Request("GET", url).url
+    last=requests.request("GET", url).url
     match = re.search("(\/share)?\/video\/([^\/\?]+)", last)
     if match:
         return match.group(2)
     return None
-def get_data(url, limit=10):
+def get_data2(url, limit=10):
     if not (limit>=0): limit=10
     res=get(url)
     data=json.loads(res)
