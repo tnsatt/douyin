@@ -3,6 +3,7 @@ Download Douyin video or get details from video link
 
 # Requirement:
 pip install requests
+
 pip install py-mini-racer
 
 # How to use:
