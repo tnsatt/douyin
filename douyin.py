@@ -3,6 +3,7 @@ import re
 import requests
 import json
 from urllib.parse import urlparse
+from py_mini_racer import MiniRacer
 
 requests.urllib3.disable_warnings(requests.urllib3.exceptions.InsecureRequestWarning)
 
@@ -12,8 +13,6 @@ user_agent = "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebK
 
 
 def genxbogus(query, ua):
-    from py_mini_racer import MiniRacer
-
     ctx = MiniRacer()
     file = os.path.dirname(__file__) + "/res/X-Bogus.js"
     with open(file, "r") as fp:
@@ -44,7 +43,7 @@ def get_data(url):
         res = req.text
         data = json.loads(res)
         if not data:
-            raise Exception("Douyin: No Video Data")
+            raise Exception("Douyin: No Data")
         data["url"] = find_url(data["aweme_detail"])
         data["title"] = data["aweme_detail"]["desc"]
         return data
