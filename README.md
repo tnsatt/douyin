@@ -3,6 +3,7 @@ Download Douyin video or get details from video link
 
 # Requirement:
 pip install requests
+pip install py-mini-racer
 
 # How to use:
 
@@ -14,4 +15,4 @@ data = douyin.get_data(url)
 
 #or
 
-download_link = douyin.get_link(url)
+download_link = douyin.get_link(url) # result is string if video post or image urls list if image post
