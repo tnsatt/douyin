@@ -1,5 +1,5 @@
 # douyin
-Download Douyin video or get details from video link
+Get Douyin video/image download url or get details from video link
 
 # Requirement:
 pip install requests
