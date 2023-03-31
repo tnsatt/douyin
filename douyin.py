@@ -1,8 +1,10 @@
-import os, sys
-import re
-import requests
 import json
+import os
+import re
+import sys
 from urllib.parse import urlparse
+
+import requests
 from py_mini_racer import MiniRacer
 
 requests.urllib3.disable_warnings(requests.urllib3.exceptions.InsecureRequestWarning)
