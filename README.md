@@ -16,4 +16,4 @@ data = douyin.get_data(url)
 
 #or
 
-download_link = douyin.get_link(url) # result is string if video post or image urls list if image post
+download_link = douyin.get_link(url) # result is string if video post or list if image post
